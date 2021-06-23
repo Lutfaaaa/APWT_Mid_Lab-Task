@@ -1,26 +1,27 @@
 <?php
 
 namespace App\Http\Controllers;
-namespace App\Http\Requests;
-namespace App\Models;
+use App\Http\Requests\regrequest;
+use App\Models\usermodel;
 
 use Illuminate\Http\Request;
 
-class regcontroller extends Controller
+class regController extends Controller
 {
     public function registration(){
         return view ("login.Registration");
     }
 
     public function verify(regrequest $req){
-        $user = new user;
-        $user->Full_name = $req->fname;
+        $user = new usermodel;
+        $user->full_name = $req->fname;
         $user->user_name = $req->uname;
-        $user->Email = $req->email;
+        $user->email = $req->email;
         $user->password =  md5($req->password);
-        $user->Confirm_password =  md5($req->cpassword);
-        $user->company_name = $req->address;
-        $user->Address = $req->cname;
+        $user->confirm_password =  md5($req->cpassword);
+        $user->address = $req->address;
+        $user->company_name = $req->cname;
+        $user->phone_number = $req->pnumber;
         $user->city = $req->city;
         $user->country = $req->country;
         $user->save();
@@ -28,3 +29,4 @@ class regcontroller extends Controller
 
     }
 }
+

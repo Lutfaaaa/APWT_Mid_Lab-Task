@@ -24,13 +24,13 @@ class regrequest extends FormRequest
     public function rules()
     {
         return [
-            'uname' => ['required', 'min:3', 'max:30', 'unique:company'],
-            'fname' => ['required', 'regex:/^[a-zA-Z]+$/u'],
-            'email' => ['required', 'email', 'unique:company', 'min:3', 'max:30', 'email:rfc'],
-            'cname' => ['required', 'min:3', 'max:30'],
-            'pnumber' => ['required', 'min:11', 'max:15'],
-            'city' => ['required', 'min:3', 'max:30'],
-            'country' => ['required', 'min:3', 'max:30'],
+            'fname' => ['required','regex:/^[a-zA-Z]+$/u'],
+            'uname' => ['required','min:3','max:30','unique:user'],
+            'email' => ['required','email','unique:user','min:3','max:30','email:rfc'],
+            'cname' => ['required','min:3','max:30'],
+            'pnumber' => ['required','min:11','max:15'],
+            'city' => ['required','min:3','max:30'],
+            'country' => ['required','min:3','max:30'],
             'password' => [
                 'required',
                 'min:8',

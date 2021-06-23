@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/login',"loginController@index");
 Route::get('/login/Registration',"regController@registration")->name("Registration");
-Route::post('/registration', 'regController@verify');
+Route::post('/login/Registration', 'regController@verify');
